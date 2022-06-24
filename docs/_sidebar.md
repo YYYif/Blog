@@ -1,4 +1,0 @@
-- [EFK部署](EFK部署.md)
-- [K8S部署](K8S部署.md)
-- [Loki在arm-Linux上的部署](Loki在arm-linux上的部署.md)
-- [README](README.md)
