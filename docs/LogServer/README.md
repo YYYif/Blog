@@ -1,4 +1,4 @@
-- [返回上一级 [docs]](docs/)
-- [LogServer](docs/LogServer/)
-  - [EFK部署](docs/LogServer/EFK部署.md)
-  - [Loki在arm-linux上的部署](docs/LogServer/Loki在arm-linux上的部署.md)
+- [返回首页](/)
+- [LogServer](LogServer/)
+  - [EFK部署](LogServer/EFK部署.md)
+  - [Loki在arm-linux上的部署](LogServer/Loki在arm-linux上的部署.md)

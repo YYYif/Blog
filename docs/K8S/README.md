@@ -1,4 +1,4 @@
-- [返回上一级 [docs]](docs/)
-- [K8S](docs/K8S/)
-  - [K8S学习之删除Pod](docs/K8S/K8S学习之删除Pod.md)
-  - [K8S部署](docs/K8S/K8S部署.md)
+- [返回首页](/)
+- [K8S](K8S/)
+  - [K8S学习之删除Pod](K8S/K8S学习之删除Pod.md)
+  - [K8S部署](K8S/K8S部署.md)
