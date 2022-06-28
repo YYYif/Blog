@@ -1,4 +1,3 @@
-- [返回首页](/)
 - [docs](docs/)
   - [Centos折腾指腩](docs/Centos折腾指腩/)
     - [centos8安装golang1-17](docs/Centos折腾指腩/centos8安装golang1-17.md)

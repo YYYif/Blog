@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+   <!-- 文件夹样式 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
   <!-- 默认主题 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <!-- 设置浏览器图标 -->
@@ -23,22 +25,52 @@
       repo: 'https://github.com/YYYif/Blog',
       // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
       loadSidebar: true,
-      // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
-      //loadNavbar: true,
-      // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
-      //coverpage: true,
-      // 最大支持渲染的标题层级
-      maxLevel: 5,
-      // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
-      subMaxLevel: 4,
-      // 小屏设备下合并导航栏到侧边栏
-      mergeNavbar: true,
-      // 切换页面后是否自动跳转到页面顶部
+      subMaxLevel: 2,
+        alias: {
+          "/.*/_sidebar.md": "/_sidebar.md",
+        },
+      // 跳转后自动到顶部
       auto2top: true,
-      // 设置路由模式,设置为 history 之后，浏览器链接里不会出现 #，个人习惯
-      // 注意，设置为 history，如果使用的是 Nginx 部署的项目，一定要加上下面的配置，否则在非首页刷新会找不到页面 try_files $uri $uri/ /index.html;
-      //routerMode: 'history',
-      //让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间
+
+      coverpage: true,
+      // PLUGINS
+      // ----------------------------------------------------------------
+      // 页面右侧toc
+      toc: {
+        tocMaxLevel: 2,
+        target: "h2, h3, h4, h5, h6",
+      },
+
+      // 全文搜索
+      search: {
+        depth: 6,
+        noData: "没有搜到!",
+        placeholder: "搜索...",
+        // 避免搜索索引冲突,同一域下的多个网站之间
+        namespace: "website-1",
+      },
+      // 底部导航
+      pagination: {
+        previousText: "上一页",
+        nextText: "下一页",
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      // 字数统计
+      count: {
+        countable: true,
+        position: "top",
+        margin: "10px",
+        float: "right",
+        fontsize: "0.9em",
+        color: "red",
+        language: "chinese",
+        localization: {
+          words: "",
+          minute: "",
+        },
+        isExpected: true,
+      },
       topMargin: 40,
       //nameLink: "/",
     }
@@ -70,16 +102,46 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <!-- docsify的js依赖 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <!-- emoji表情支持 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <!-- 图片放大缩小支持 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <!-- 搜索功能支持 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <!--分页导航-->
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- 代码高亮  https://cdn.jsdelivr.net/npm/prismjs@1/components/ -->
+	
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>	
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cmake.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>     
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>  
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-powershell.min.js"></script>  
+
+  <!-- 多tab支持 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
+
+  <!-- 代码复制 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+
+  <!-- 底部 上一页下一页 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"></script>
+
+  <!-- 全文搜索 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+
+  <!-- 图片放大缩小 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
+  <!-- 字数统计 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
+
+  <!-- 侧边栏目录折叠 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
+  <!-- 页面右侧 TOC -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>
+
+    <!-- emoji -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 </body>
 <!--突然内容无法滚动，滚动条消失了，StackOverflow建议加上这句，指定overflow-->
 <style type="text/css">
