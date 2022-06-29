@@ -9,8 +9,8 @@
    <!-- 文件夹样式 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
   <!-- 默认主题 -->
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css"> -->
   <!-- 设置浏览器图标 -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -54,8 +54,8 @@
       },
       // 底部导航
       pagination: {
-        previousText: "Prev",
-        nextText: "Next",
+        previousText: "上一篇",
+        nextText: "下一篇",
         crossChapter: true,
         crossChapterText: true,
       },
@@ -77,7 +77,7 @@
       topMargin: 40,
       //nameLink: "/",
       // 显示日期
-      formatUpdated: '{YY}/{MM}/{DD} {HH}:{mm}:{ss}',
+      formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}',
     }
   </script>
   <!-- Docsify v4 -->
@@ -119,9 +119,9 @@
     const gitalk = new Gitalk({
         clientID: 'aba3882d5e2cab73e7cb',
         clientSecret: '8deb0bd4be08196a4274157e2e68846a264c2412',
-        repo: 'Github repo',
-        owner: 'Github repo owner',
-        admin: ['Github repo collaborators, only these guys can initialize github issues'],
+        repo: 'https://github.com/YYYif/Blog',
+        owner: 'YYYif',
+        admin: ['YYYif,yyfer'],
         // facebook-like distraction free mode
         distractionFreeMode: false
       })
