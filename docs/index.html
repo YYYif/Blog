@@ -117,6 +117,7 @@
   <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
   <script>
     const gitalk = new Gitalk({
+        id: decodeURI('{{ page.url }}'),
         clientID: 'aba3882d5e2cab73e7cb',
         clientSecret: '8deb0bd4be08196a4274157e2e68846a264c2412',
         repo: 'Blog',
