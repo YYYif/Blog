@@ -19,7 +19,7 @@
 
 </head>
 <body>
-  <div id="app">Please Wait For A Few Minutes</div>
+  <div id="app">🏃‍🏃‍🏃‍💨Please Wait For A Few Minutes🚀🚀🚀</div>
   <script>
     window.$docsify = {
       // 项目名称
@@ -47,8 +47,8 @@
       // 全文搜索
       search: {
         depth: 6,
-        noData: "Ooooooops! Empty Search Results!",
-        placeholder: "Search...",
+        noData: "😒Ooooooops! Empty Search Results!",
+        placeholder: "🔍 Search...",
         // 避免搜索索引冲突,同一域下的多个网站之间
         namespace: "website-1",
       },
@@ -75,9 +75,13 @@
         isExpected: true,
       },
       topMargin: 40,
-      //nameLink: "/",
-      // 显示日期
-      formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}',
+      // 页脚
+      footer: {
+        copy: '<span>Copyright &copy; 2022 &nbsp 💖 &nbsp</span>',
+        auth: ' <strong><a href="https://github.com/YYYif/Blog" target="_blank">YYYif</a></strong>',
+        pre: '<hr/>',
+        style: 'font-size: 18px; text-align: center;',
+      },
     }
   </script>
   <!-- Docsify v4 -->
@@ -127,6 +131,23 @@
         distractionFreeMode: false
       })
   </script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
+  <script type="text/javascript">
+     $(document).ready(function () {
+       $.goup({
+         trigger: 100,
+         bottomOffset: 52,
+         locationOffset: 25,
+         //title: 'TOP',
+         titleAsText: true
+       });
+     });
+  </script>
+  <!-- 红心点击特效 -->
+  <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
+  <!-- 访问量统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 <!--突然内容无法滚动，滚动条消失了，StackOverflow建议加上这句，指定overflow-->
 <!-- <style type="text/css">
