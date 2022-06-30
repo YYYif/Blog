@@ -1,5 +1,5 @@
 以某个应用执行为例
-```
+```bash
 #!/bin/bash
 ps -e|grep doc|awk -F ' ' '{print $1}'|xargs kill
 nohup ./bin/doc >> output.out 2>&1 &
@@ -7,11 +7,15 @@ nohup ./bin/doc >> output.out 2>&1 &
 
 基本含义
 
-/dev/null 表示空设备文件
+/dev/null 表示空设备文件<br>
+
 0 表示stdin标准输入
+
 1 表示stdout标准输出
+
 2 表示stderr标准错误
-> file 表示将标准输出输出到file中，也就相当于 1>file
+
+\> file 表示将标准输出输出到file中，也就相当于 1>file
 
 2> error 表示将错误输出到error文件中
 

@@ -2,10 +2,10 @@
 
 ## 一、资源准备阶段
 ### 1、配置镜像源
-CentOS-Base.repo
-docker-ce.repo
-Kubernetes.repo
-epel.repo
+CentOS-Base.repo <br>
+docker-ce.repo <br>
+Kubernetes.repo <br>
+epel.repo <br>
 
 创建本地缓存
 ```bash

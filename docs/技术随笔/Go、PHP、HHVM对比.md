@@ -54,17 +54,18 @@ HHVM:
 - 单进程架构：更方便运维，方便共享全局数据结构（如配置、字典甚至网络连接）
 
   **注: HHVM生成和执行PHP的在中间字节码，执行时通过JIT(Just In Time即时编译，软件优化技术，指在运行时才会去编译字节码为机器码)转换为机器码执行。JIT将大量重复执行的字节码在运行时编译为机器码，达到提高执行效率的目的。通常触发JIT的条件是代码或函数被多次重复调用。**
-![image.png](https://upload-images.jianshu.io/upload_images/15108341-5fed77aaa0d372ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](../img/hhvm-jit.png)
 
-- 为什么会有优势呢:
-  zend vm 是解释型虚拟机，hhvm是二进制翻译型虚拟机，那么为什么zend 比hhvm慢呢？ 
-  其实编译过程到生成中间码的阶段2种引擎(zend vm、hhvm)性能差距并不大，大家都是一样的词法、语法解析和优化生成为中间码，差距是在执行引擎的过程中也就是runtime中：
-  zend 执行引擎中opcode被cache opcode 后，就不需要重新编译了，然后每次都去调用c的接口，然后c接口再翻译为机器码执行；
-  hhvm执行引擎hhbc(bytecode)生成后也不需要重新翻译了，如果非JIT模式其实和zend+cache模式原理是一样的，通过opcode出栈调用c接口，然后再将C翻译为机器码执行；而JIT模式首次需要将opcode翻译为机器码并且将其cache住，之后每次则执行cache中的机器码而不去执行C层的代码，少了一层翻译过程，直接执行二进制代码了，这样效率就上去了。
+- 为什么会有优势呢:<br>
+  zend vm 是解释型虚拟机，hhvm是二进制翻译型虚拟机，那么为什么zend 比hhvm慢呢？ <br>
+  其实编译过程到生成中间码的阶段2种引擎(zend vm、hhvm)性能差距并不大，大家都是一样的词法、语法解析和优化生成为中间码，差距是在执行引擎的过程中也就是runtime中：<br>
+  zend 执行引擎中opcode被cache opcode 后，就不需要重新编译了，然后每次都去调用c的接口，然后c接口再翻译为机器码执行；<br>
+  hhvm执行引擎hhbc(bytecode)生成后也不需要重新翻译了，如果非JIT模式其实和zend+cache模式原理是一样的，通过opcode出栈调用c接口，然后再将C翻译为机器码执行；<br>
+  而JIT模式首次需要将opcode翻译为机器码并且将其cache住，之后每次则执行cache中的机器码而不去执行C层的代码，少了一层翻译过程，直接执行二进制代码了，这样效率就上去了。<br>
 
 - 
 
-![image.png](https://upload-images.jianshu.io/upload_images/15108341-5bfbe588d7d7bc8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](../img/php-diff-arch.png)
 
 
 未完结.....持续进行

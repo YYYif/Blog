@@ -1,5 +1,5 @@
 报错如下：
-![image.png](https://upload-images.jianshu.io/upload_images/15108341-e68d695f05be71b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](../img/ssh-error.png)
 
 
 
